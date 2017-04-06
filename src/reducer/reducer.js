@@ -39,7 +39,7 @@ export const guessReducer = (state, action) => {
             feedback = 'You\'re Ice Cold...';
         }
         else if (difference >= 30) {
-            feedback = 'You\'re Cold...';
+            feedback = 'You\'re a chilly dog';
         }
         else if (difference >= 10) {
             feedback = 'You\'re Warm';
