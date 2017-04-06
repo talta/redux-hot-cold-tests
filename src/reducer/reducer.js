@@ -1,8 +1,9 @@
+
 import {
     NEW_GAME,
     MAKE_GUESS,
     TOGGLE_INFO_MODAL
-} from './actions';
+} from '../actions/actions';
 
 const initialState = {
     guesses: [],
@@ -11,7 +12,7 @@ const initialState = {
     showInfoModal: false
 };
 
-export default (state, action) => {
+export const guessReducer = (state, action) => {
     state = state || initialState;
     if (action.type === NEW_GAME) {
         state = Object.assign({
