@@ -1,5 +1,5 @@
 import React from 'react';
-import {expect} from 'enzyme';
+// import {expect} from 'enzyme';
 
 import {newGame, makeGuess, toggleInfoModal} from '../actions/actions';
 import {guessReducer} from './reducer';
@@ -25,16 +25,22 @@ describe('guessReducer', ()=>{
 	describe('newGame', ()=>{
 		it('should create a new game', ()=>{
 			let state = {};
-			console.log(state);
+			// console.log(state);
+			// console.log(expect);
 			state = guessReducer(state, newGame());
-			expect(state).toHaveContext({guesses:[]})
+			// expect(state).toHaveContext({guesses:[]})
+			///expect that the state.guesses is empty
+			expect(state.guesses).toEqual([]);
 		});
 	});
 	describe('makeGuess', ()=>{
 		it('should add a guess to the list', ()=>{
 			 let state = newGame();
+			 console.log(state);
 			 state = guessReducer(state, makeGuess(10));
+			 console.log(state);
 			expect(state.guesses).toContain(10);
-		})
-	})
+		});
+	});
+	describe
 })
