@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {toggleInfoModal} from '../actions';
+import {toggleInfoModal} from '../actions/actions';
 
 export class InfoModal extends React.Component {
     hide(event) {
