@@ -1,17 +1,17 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 
 import {makeGuess} from '../../actions/actions';
-import GuessForm from 'guess-form';
+import {GuessForm} from '../guess-form';
 
 describe('GuessForm', ()=>{
 	it('should render without crashing', ()=>{
 		shallow(<GuessForm />);
 	});
 	it('should dispatch makeGuess when the form is submitted', ()=>{
-		const dispatch = jest.fn;
+		const dispatch = jest.fn();
 		const wrapper = mount(<GuessForm dispatch={dispatch} />);
-		const node = "10";
+		const value = "10";
 		wrapper.find('input[type="text"]').node.value = value;
 		wrapper.simulate('submit');
 		expect(dispatch).toHaveBeenCalledWith(makeGuess(value));
